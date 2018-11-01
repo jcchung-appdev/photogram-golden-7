@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  get("/", {:controller => "pictures", :action => "index"})
   get("/photos", {:controller => "pictures", :action => "index"})
   get("/photos/new", {:controller => "pictures", :action => "new_form"})
   get("/create_photo", {:controller => "pictures", :action => "create_photo"})

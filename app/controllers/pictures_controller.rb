@@ -16,8 +16,8 @@ class PicturesController < ApplicationController
         
         @count = Photo.count
         
-        render("pic_templates/create_photo.html.erb")
-        #redirect_to("/photos")
+        #render("pic_templates/create_photo.html.erb")
+        redirect_to("/photos")
     end
     
     def show_details
@@ -56,12 +56,14 @@ class PicturesController < ApplicationController
         @p.caption = params.fetch('the_caption')
         @p.save
         
-        render("pic_templates/update_photo.html.erb")
+        redirect_to("/photos/" + @p.id.to_s)
+        #render("pic_templates/update_photo.html.erb")
     end
     
     def delete_photo
         Photo.find(params.fetch('id')).destroy
         @count = Photo.count
-        render("pic_templates/delete_photo.html.erb")
+        #render("pic_templates/delete_photo.html.erb")
+        redirect_to("/photos")
     end
 end
