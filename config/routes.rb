@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get("/photos", {:controller => "pictures", :action => "index"})
   get("/photos/new", {:controller => "pictures", :action => "new_form"})
   get("/create_photo", {:controller => "pictures", :action => "create_photo"})
-  get("/photos/:id" , {:controller => "pictures", :action => "show_details"})
+  get("/photos/:id", {:controller => "pictures", :action => "show_details"})
   get("/photos/:id/edit", {:controller => "pictures", :action => "edit_form"})
   get("/update_photo/:id", {:controller => "pictures", :action => "update_photo"})
   get("/delete_photo/:id", {:controller => "pictures", :action => "delete_photo"})

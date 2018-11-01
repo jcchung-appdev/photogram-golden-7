@@ -1,1 +1,12 @@
-All photos here
+<h1>All Photos </h1>
+<a href="/photos/new">Add a new photo</a>
+<br /> <br />
+<% @photo_list.reverse.each do |p| %>
+<h3><%= p.caption %></h3>
+<img src=<%= p.source %> alt="<%= p.caption %>">
+<li><a href="/photos/<%= p.id %>">Show Details</a></li>
+<li><a href="/photos/<%= p.id %>/edit">Edit</a></li>
+<li><a href="/delete_photo/<%= p.id %>">Delete</a></li>
+<hr>
+<% end %>
+
